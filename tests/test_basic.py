@@ -5,6 +5,9 @@ import mapserverapi
 qs = "LAYERS=ocean&TRANSPARENT=true&FORMAT=image%2Fpng&SERVICE=WMS&" \
     "VERSION=1.1.1&REQUEST=GetMap&STYLES=&EXCEPTIONS=application%2Fvnd.ogc." \
     "se_xml&SRS=EPSG%3A4326&BBOX=-180.0,-90.0,180.0,90.0&WIDTH=500&HEIGHT=250"
+qs2 = "LAYERS=ocean&TRANSPARENT=true&FORMAT=image%2Fpng&SERVICE=WMS&" \
+    "VERSION=1.1.1&REQUEST=GetMap&STYLES=&EXCEPTIONS=application%2Fvnd.ogc." \
+    "se_xml&SRS=foobar&BBOX=-180.0,-90.0,180.0,90.0&WIDTH=500&HEIGHT=250"
 datadir = os.path.realpath(os.path.dirname(os.path.realpath(__file__)) +
                            "/../test_datas")
 
@@ -16,6 +19,16 @@ def test_invoke():
     assert buf is not None
     assert len(buf) > 1000
     assert content_type == b"image/png"
+
+
+def test_invoke_with_bad_qs():
+    with open("%s/test.map" % datadir, "r") as f:
+        mapfile = f.read().replace('{DATAPATH}', datadir)
+    buf, content_type = mapserverapi.invoke(mapfile, qs2)
+    assert buf is not None
+    assert len(buf) < 1000
+    print(content_type)
+    assert content_type == b"application/vnd.ogc.se_xml; charset=UTF-8"
 
 
 def test_invoke_to_file():
