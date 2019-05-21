@@ -2,6 +2,7 @@ pipeline:
   build:
     image: metwork/mfcom-${OS_VERSION}-buildimage:integration
     commands:
+      - yum -y install metwork-mfext-layer-mapserver
       - /opt/metwork-mfext/bin/mfext_wrapper -- python setup.py install
       - /opt/metwork-mfext/bin/mfext_wrapper -- pip install -r dev-requirements.txt
       - /opt/metwork-mfext/bin/mfext_wrapper -- pytest
