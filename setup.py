@@ -12,6 +12,8 @@ setup(
     name="mapserverapi",
     version="0.1.0",
     license="BSD",
+    url="https://github.com/metwork-framework/mapserverapi_python",
+    description="tiny python library to invoke mapserver engine as a library",
     packages=find_packages(),
     install_requires=install_requires
 )
