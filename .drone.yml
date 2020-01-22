@@ -1,6 +1,6 @@
 pipeline:
   build:
-    image: metwork/mfcom-${OS_VERSION}-buildimage:integration
+    image: metwork/mfxxx-${OS_VERSION}-buildimage:integration
     commands:
       - yum -y install metwork-mfext-layer-mapserver
       - /opt/metwork-mfext/bin/mfext_wrapper -- python setup.py install
@@ -9,4 +9,4 @@ pipeline:
 matrix:
   OS_VERSION:
     - centos6
-    - centos7
+
