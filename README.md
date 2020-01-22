@@ -74,6 +74,9 @@ content_type = mapserverapi.invoke_to_file(mapfile_content, mapserver_qs,
 
 
 
+
+
+
 ## Contributing guide
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) file.
