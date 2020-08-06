@@ -1,17 +1,14 @@
 # mapserverapi_python
 
-[//]: # (automatically generated from https://github.com/metwork-framework/resources/blob/master/cookiecutter/_%7B%7Bcookiecutter.repo%7D%7D/README.md)
+[//]: # (automatically generated from https://github.com/metwork-framework/github_organization_management/blob/master/common_files/README.md)
 
 **Status (master branch)**
-
 
 
 
 [![Drone CI](http://metwork-framework.org:8000/api/badges/metwork-framework/mapserverapi_python/status.svg)](http://metwork-framework.org:8000/metwork-framework/mapserverapi_python)
 [![Maintenance](https://github.com/metwork-framework/resources/blob/master/badges/maintained.svg)]()
 
-
-[//]: # (TABLE_OF_CONTENTS_PLACEHOLDER)
 
 
 
@@ -69,11 +66,6 @@ content_type = mapserverapi.invoke_to_file(mapfile_content, mapserver_qs,
 # You have the content_type of the result in content_type and the raw result
 # in the given filepath
 ```
-
-
-
-
-
 
 
 
