@@ -8,7 +8,7 @@ class Glib2Wrapper(object):
     @staticmethod
     def __make_instance():
         if Glib2Wrapper.__lib is None:
-            Glib2Wrapper.__lib = cdll.LoadLibrary("libglib-2.0.so")
+            Glib2Wrapper.__lib = cdll.LoadLibrary("libglib-2.0.so.0")
             Glib2Wrapper.__lib.g_free.restype = None
             Glib2Wrapper.__lib.g_free.argtypes = [c_void_p]
 
