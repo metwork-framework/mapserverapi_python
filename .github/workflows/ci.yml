@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+env:
+    DOCKER_RUN_OPTIONS: "-v ${{ github.workspace }}:/src"
+    DOCKER_WORKFLOW_SCRIPTS_DIR: /src/.github/workflows
+    BUILDIMAGE: metwork/mfxxx-centos8-buildimage:integration
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v2
+      - name: build test install
+        run: |
+          docker run ${DOCKER_RUN_OPTIONS} --rm ${BUILDIMAGE} /bin/bash -c "${DOCKER_WORKFLOW_SCRIPTS_DIR}/build.sh"
