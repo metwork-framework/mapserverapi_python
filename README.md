@@ -6,7 +6,7 @@
 
 
 
-[![Drone CI](http://metwork-framework.org:8000/api/badges/metwork-framework/mapserverapi_python/status.svg)](http://metwork-framework.org:8000/metwork-framework/mapserverapi_python)
+[![GitHub CI](https://github.com/metwork-framework/mapserverapi_python/workflows/CI/badge.svg?branch=master)](https://github.com/metwork-framework/mapserverapi_python/actions?query=workflow%3ACI+branch%3Amaster)
 [![Maintenance](https://raw.githubusercontent.com/metwork-framework/resources/master/badges/maintained.svg)](https://github.com/metwork-framework/resources/blob/master/badges/maintained.svg)
 
 
